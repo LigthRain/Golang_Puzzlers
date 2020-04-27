@@ -61,4 +61,10 @@ func main() {
 	fmt.Printf("Dog implements interface Named: %v\n", ok)
 	_, ok = interface{}(dog).(Pet)
 	fmt.Printf("Dog implements interface Pet: %v\n", ok)
+
+	var name Named
+	var pet PetTag
+	name = pet
+	fmt.Println()
+	fmt.Printf("%q", name.Name())
 }

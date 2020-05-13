@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Named interface {
 	// Name 用于获取名字。
 	Name() string
@@ -20,11 +22,13 @@ func (dog Dog) Name() string {
 func main() {
 	// 示例1。
 	const num = 123
-	//_ = &num // 常量不可寻址。
-	//_ = &(123) // 基本类型值的字面量不可寻址。
+	_ = &num // 常量不可寻址。
+	_ = &(123) // 基本类型值的字面量不可寻址。
 
 	var str = "abc"
 	_ = str
+	u := str[01]
+	fmt.Println(u)
 	//_ = &(str[0]) // 对字符串变量的索引结果值不可寻址。
 	//_ = &(str[0:2]) // 对字符串变量的切片结果值不可寻址。
 	str2 := str[0]
